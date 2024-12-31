@@ -15,6 +15,7 @@ const joinRoom = {
             songSRC: null, 
             selectedSong: null, 
             songTitle: null, 
+            songTime: null,
             socket: io()
         };
     },
@@ -83,6 +84,9 @@ const joinRoom = {
                         </div>
                         <div v-else-if="play">
                             <h3>Starting Soon...</h3>
+                            <ul id="myList">
+                            </ul>
+                            <p class='song-time'>{{ songTime }}</p>
                         </div>
                     </div>
                 </main>
@@ -166,6 +170,7 @@ const joinRoom = {
             }
             this.selectedSong = song;
             this.songSRC = `/static/songs/${this.roomID}/${this.$props.userID}.mp3`;
+            this.selectedSong.link = `/static/songs/${this.roomID}/${this.$props.userID}.mp3`;
             this.songTitle = song.title;
             let audio = document.getElementById('songBox');
             audio.style.display = 'block';
@@ -185,7 +190,6 @@ const joinRoom = {
                 throw new Error('Failed');
             }
             this.socket.emit('update_room', {'room_code': this.$props.roomCode});
-            this.socket.emit('checkGameState', {'room_code': this.$props.roomCode});
         },
         async getRoomID(){
             try {
@@ -221,7 +225,18 @@ const joinRoom = {
             this.socket.on('changeState', (game) => {
                 this.game = null;
                 this.play = game.play;
-            })
+            });
+
+            this.socket.on('song', (song) => {
+                const list = document.getElementById('myList');
+                const newItem = document.createElement('li');
+                newItem.textContent = `${song}`;
+                list.appendChild(newItem);
+            });
+
+            this.socket.on('song_time_left', (time) => {
+                this.songTime = i;
+            });
         },
         async stay_alive(){
             setInterval(() => {

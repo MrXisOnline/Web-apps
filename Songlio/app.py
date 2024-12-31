@@ -105,13 +105,6 @@ def startGame(data):
     room_code = data["room_code"]
     socketio.emit('startgame', {'game': 1}, to=room_code)
 
-@socketio.on('checkGameState')
-def checkGameState(data):
-    room_code = data["room_code"]
-    room = Room.query.filter_by(roomCode=room_code).first()
-    if room.play == 1:
-        socketio.emit('changeState', {'play': room.play}, to=room_code)
-
 # Cleanup inactive players (e.g., in a background task)
 def remove_inactive_players():
     with app.app_context():

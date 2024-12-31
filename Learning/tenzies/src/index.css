@@ -1,0 +1,70 @@
+body {
+    font-family: "Inter", "sans-serif";
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+#root {
+    border: 30px solid;
+    border-radius: 10px;
+    width: 70%;
+    margin: 5%;
+    height: 500px;
+}
+
+header {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header > p {
+    max-width: 400px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+main {
+    margin: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.all-dies {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px
+}
+
+.dies-Btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    font-family: "Inter";
+    font-weight: 900;
+    font-size: large;
+}
+
+.roll-Btn {
+    margin: 40px;
+    width: 100px;
+    height: 40px;
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: larger;
+}
+
+.roll-start-Btn {
+    background-color: green;
+    width: 200px;
+}
+
+.green {
+    background-color: green;
+}

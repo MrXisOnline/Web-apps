@@ -1,0 +1,56 @@
+* {
+  font-family: Inter;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: red;
+  margin: 5px 5px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.globe-img {
+  width: 50px;
+  padding-right: 10px;
+}
+.header-nav {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-text {
+  color: white;
+  font-size: 1.5rem;
+}
+
+main {
+  display: flex;
+  padding: 10px;
+  padding-top: 30px;
+  padding-left: 50px;
+}
+.location-image {
+  width: 300px;
+  padding-right: 20px;
+  border-radius: 20%;
+}
+.marker {
+  width: 15px;
+  padding-right: 5px;
+}
+.location-name{
+  padding-right: 10px;
+}
+.location-link{
+  color: grey;
+}
+.location-para {
+  max-width: 600px;
+}
+.location-div{
+  padding-top: 20px;
+}

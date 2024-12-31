@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+    font-family: "Inter";
+}
+
+#root {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 5%;
+}
+
+header > p {
+    max-width: 400px;
+    text-align: center;
+}
+
+header > h2 {
+    text-align: center;
+}

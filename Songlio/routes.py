@@ -127,6 +127,18 @@ def selectSong(room_id, p_id):
         ydl.download([link])
     return jsonify({'message': 'success'}), 201
 
+async def gameStart(room_id):
+    print('hi')
+    await asyncio.sleep(5)
+    room_code = Room.query.get(room_id).roomCode
+    for user in User.query.filter_by(roomID=room_id).all():
+        song = user.get_song_choice()
+        socketio.emit('song', [song[1]], to=[room_code])
+        # for i in range(30, 0, -1):
+        #     socketio.emit('song_time_left', [i], to=[room_code])
+        #     await asyncio.sleep(1)
+    return
+
 @main.route('/songChoice/<room_id>/<p_id>', methods=['POST'])
 def songChoice(room_id, p_id):
     req = request.json
@@ -144,6 +156,11 @@ def songChoice(room_id, p_id):
         room.start = 0
         room.play = 1
         db.session.commit()
+        socketio.emit('changeState', {'play': room.play}, to=Room.query.get(room_id).roomCode)
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+        loop.create_task(gameStart(room_id))
+        loop.run_in_executor(None, loop.run_forever)
     return jsonify({'message': 'success'}), 201
 
 @main.route('/testroute/<id>')
