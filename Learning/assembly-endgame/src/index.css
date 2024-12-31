@@ -1,6 +1,8 @@
 body {
     margin: 0;
     font-family: "Inter";
+    background-color: #222222;
+    color: #f1f1ef;
 }
 
 #root {
@@ -18,4 +20,121 @@ header > p {
 
 header > h2 {
     text-align: center;
+}
+
+.gameMessages {
+    width: 500px;
+    height: 100px;
+    margin: 20px;
+}
+
+.game-lives{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.game-lives > p {
+    /* width: 85px; */
+    /* display: inline; */
+    flex: 1 0 19%;
+    font-weight: 700;
+    text-align: center;
+    margin: 1px;
+    padding: 0;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+.gameState {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.gameState > p {
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 3px;
+    padding: 10px;
+    background-color: #2c2d2a;
+    border-bottom: 2px solid #757575;
+}
+
+.keyboard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.keyboard > button {
+    background-color: #dfa338;
+    width: 40px;
+    height: 40px;
+    font-family: "Inter";
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.keyboard > button:nth-child(21) {
+    grid-column-start: 3;
+}
+
+.start-new-game {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.start-new-game > button{
+    display: none;
+    background-color: #108db7;
+    font-family: "Inter";
+    font-weight: 600;
+    font-size: 20px;
+    width: 200px;
+    height: 40px;
+    border-radius: 7px;
+}
+
+.green {
+    background-color: green !important;
+}
+
+.red {
+    background-color: red !important;
+}
+
+.gameMessages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.wrong {
+    background-color: purple !important;
+}
+
+.win {
+    background-color: green !important;
+}
+
+.lost {
+    background-color: red !important;
+}
+
+p.lose {
+    background-image: url("./assets/images/Skull-Emoji.png");
+    background-size: contain; /* Ensure the image fits within the element */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center;
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.3) !important; /* Dull the text color */
+    background-color: rgba(44, 45, 42, 0.5) !important;
 }
