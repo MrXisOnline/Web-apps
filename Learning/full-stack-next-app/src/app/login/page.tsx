@@ -19,11 +19,15 @@ export default function LoginPage() {
             setLoading(true);
             const response = await axios.post('/api/users/login', user);
             if (response.data.status !== 200) {
+                console.log(response);
+                
                 throw response.data;
             }
             console.log("Login success", response.data);
             router.push('/profile')
         } catch (err: any) {
+            console.log('hi');
+            
             console.log(err.message)
         } finally {
             setLoading(false)
