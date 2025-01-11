@@ -1,5 +1,5 @@
 import { useState, useReducer, useContext, useCallback, useEffect, createContext, useRef } from 'react';
-import { Users, UserProvider } from './Store';
+// import { Users, UserProvider } from './Store';
 
 function AddUser() {
     const {users, setUsers} = useContext(Users);
@@ -29,13 +29,25 @@ function ShowUsers() {
     )
 }
 
+// async function getPokemonData(){
+//     let pokes = [];
+//     for (let i=1; i<=100; i++){
+//         await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+//         .then(res => res.json())
+//         .then(data => pokes.push({'id': data.id, 'name': data.name, 'image': data.sprites.front_default}))
+//     }
+//     console.log(pokes)
+//     jsObj = JSON.stringify({pokes})
+// }
+
 export default function App() {
     return (
         <>
-            <UserProvider>
+            {/* <UserProvider>
                 <AddUser />
                 <ShowUsers />
-            </UserProvider>
+            </UserProvider> */}
+            {/* <button onClick={getPokemonData}>get pokies</button> */}
         </>
     )
 }
