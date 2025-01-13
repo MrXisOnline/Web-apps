@@ -3,10 +3,10 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 // import App from './App.jsx'
 // import App from './TestingHooks'
-import App from './Pokemon'
+// import App from './Pokemon'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App />
+    {/* <App /> */}
   </StrictMode>,
 )
