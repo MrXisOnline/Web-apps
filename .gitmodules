@@ -1,3 +1,6 @@
 [submodule "new-portfolio"]
 	path = new-portfolio
 	url = https://github.com/MrXisOnline/new-portfolio.git
+[submodule "to-do-list-next-app"]
+	path = to-do-list-next-app
+	url = https://github.com/MrXisOnline/to-do-list-next-app.git
