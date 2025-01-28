@@ -4,3 +4,6 @@
 [submodule "to-do-list-next-app"]
 	path = to-do-list-next-app
 	url = https://github.com/MrXisOnline/to-do-list-next-app.git
+[submodule "Movie-Recommendation-App"]
+	path = Movie-Recommendation-App
+	url = https://github.com/MrXisOnline/Movie-Recommendation-App.git
